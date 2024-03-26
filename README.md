@@ -11,13 +11,11 @@ Then, commands were used to find the movies described in (1) and (2) below.
 
 (1) To find all the movies released in 1983 with a runtime longer than 200 minutes the following command was run in mongosh:
 ```powershell
-db.movies.find({ 'runtime': { $gt: 200 }, 'year':1983 }, {title:1, runtime:1, year:1, '_id': false})
+db.movies.find({ 'runtime': { $gt: 200 }, 'year':1983 }, {title:1, runtime:1, year:1, '_id': false}).sort({runtime:1})
 ```
+The sort function at the end sorts the results by increasing runtime. The code and results are shown in the image below.
 
-The code and results are shown in the image below.
-
-<img width="600" alt="Screenshot 2024-03-26 at 1 41 03 PM" src="https://github.com/samanthapoth/CSTopics1HW3/assets/90707077/c8d47d78-bd6f-4630-b35e-ea271c573903">
-
+<img width="650" alt="Screenshot 2024-03-26 at 1 43 54 PM" src="https://github.com/samanthapoth/CSTopics1HW3/assets/90707077/8b4cf2df-0b0e-43b3-b0d6-49b16d34f3f6">
 
 
 (2) To find all the movies released after 2014 with an imdb rating greater than 9, the following command was run in mongosh:
